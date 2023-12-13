@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".image.ImageFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/image_prompt_text_til"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Prompt"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_rv">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/image_prompt_text_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/image_send_prompt"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Send"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/image_prompt_text_til"
+        app:layout_constraintTop_toBottomOf="@+id/image_prompt_text_til" />
+
+    <ScrollView
+        android:id="@+id/image_prompt_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_send_prompt">
+
+        <TextView
+            android:id="@+id/image_prompt_response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/image_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_image"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_send_prompt"
+        app:layout_constraintEnd_toStartOf="@+id/image_send_prompt"
+        app:layout_constraintTop_toTopOf="@+id/image_send_prompt" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/image_rv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/adapter_image"
+        />
+
+
+    <ProgressBar
+        android:id="@+id/image_prompt_progress"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/image_prompt_scroll"
+        app:layout_constraintEnd_toEndOf="@+id/image_prompt_scroll"
+        app:layout_constraintStart_toStartOf="@+id/image_prompt_scroll"
+        app:layout_constraintTop_toTopOf="@+id/image_prompt_scroll"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

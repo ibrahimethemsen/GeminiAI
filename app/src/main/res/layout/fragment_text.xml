@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".text.TextFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_prompt_text_til"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:hint="Prompt"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_prompt_text_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/text_send_prompt"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Send"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/text_prompt_text_til"
+        app:layout_constraintTop_toBottomOf="@+id/text_prompt_text_til" />
+
+    <ScrollView
+        android:id="@+id/text_prompt_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_send_prompt"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/text_prompt_response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/text_prompt_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/text_prompt_scroll"
+        app:layout_constraintEnd_toEndOf="@+id/text_prompt_scroll"
+        app:layout_constraintStart_toStartOf="@+id/text_prompt_scroll"
+        app:layout_constraintTop_toTopOf="@+id/text_prompt_scroll" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

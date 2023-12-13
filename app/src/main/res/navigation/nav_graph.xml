@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/textFragment">
+
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.ibrahimethemsen.geminiai.image.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="com.ibrahimethemsen.geminiai.text.TextFragment"
+        android:label="fragment_text"
+        tools:layout="@layout/fragment_text" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.ibrahimethemsen.geminiai.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+</navigation>
